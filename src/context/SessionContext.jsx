@@ -1,5 +1,3 @@
-"use client"
-
 import { createContext, useContext, useState, useEffect } from "react"
 import { getSessionData, setSessionData, removeSessionData } from "../utils/sessionUtils"
 
@@ -62,11 +60,9 @@ export const SessionProvider = ({ children }) => {
   const login = (email, password) => {
     const users = getUsers()
 
-    // Find user with matching email and password
     const user = users.find((u) => u.email === email && u.password === password)
 
     if (user) {
-      // Set current user in session
       setSessionData("currentUser", user)
       setCurrentUser(user)
       setIsLoggedIn(true)
@@ -79,17 +75,14 @@ export const SessionProvider = ({ children }) => {
   const register = (name, email, password) => {
     const users = getUsers()
 
-    // Check if email already exists
     if (users.some((user) => user.email === email)) {
       return false
     }
 
-    // Add new user
     const newUser = { name, email, password }
     users.push(newUser)
     setSessionData("users", users)
 
-    // Log in the new user
     setSessionData("currentUser", newUser)
     setCurrentUser(newUser)
     setIsLoggedIn(true)

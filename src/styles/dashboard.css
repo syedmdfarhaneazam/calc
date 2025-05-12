@@ -614,3 +614,39 @@ tr:last-child td {
     width: 100%;
   }
 }
+/* Fix sidebar scrolling issue */
+.sidebar {
+  overflow-x: hidden !important;
+}
+
+.sidebar.collapsed {
+  overflow-x: hidden !important;
+}
+
+.sidebar-nav {
+  overflow-x: hidden !important;
+}
+
+/* Adjust logo image size */
+.logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Adjust Font Awesome icons */
+.fas {
+  font-size: 1.2rem;
+}
+
+.info-icon {
+  cursor: pointer;
+  color: var(--primary-500);
+}
+
+/* Fix for Font Awesome in buttons */
+.btn .fas {
+  margin-right: 0.5rem;
+}

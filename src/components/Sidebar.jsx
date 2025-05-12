@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { useSession } from "../context/SessionContext"
 import ThemeToggle from "./ThemeToggle"
@@ -20,8 +18,6 @@ const Sidebar = ({ activePage, onPageChange }) => {
 
   const handleNavClick = (page) => {
     onPageChange(page)
-
-    // On mobile, collapse sidebar after navigation
     if (window.innerWidth < 992) {
       setCollapsed(true)
     }
@@ -33,7 +29,6 @@ const Sidebar = ({ activePage, onPageChange }) => {
     window.location.href = "/"
   }
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = () => {
       setUserDropdownActive(false)
@@ -46,7 +41,6 @@ const Sidebar = ({ activePage, onPageChange }) => {
     }
   }, [])
 
-  // Responsive behavior
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 992) {
@@ -56,7 +50,6 @@ const Sidebar = ({ activePage, onPageChange }) => {
 
     window.addEventListener("resize", handleResize)
 
-    // Initially trigger resize to set correct state
     handleResize()
 
     return () => {

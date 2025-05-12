@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { formulas } from "../utils/calculatorUtils"
 import Modal from "./Modal"
@@ -43,15 +41,15 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
         </div>
         <div className="action-buttons">
           <button id="back-to-calculator" className="btn btn-text" onClick={onBackToCalculator}>
-            <span className="material-icons">arrow_back</span>
+            <i className="fas fa-arrow-left"></i>
             Back to Calculator
           </button>
           <button id="new-calculation" className="btn btn-secondary" onClick={onNewCalculation}>
-            <span className="material-icons">add</span>
+            <i className="fas fa-plus"></i>
             New Calculation
           </button>
           <button id="print-results" className="btn btn-primary" onClick={generatePDF}>
-            <span className="material-icons">picture_as_pdf</span>
+            <i className="fas fa-file-pdf"></i>
             Generate PDF
           </button>
         </div>
@@ -94,9 +92,7 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
                   <td>{results.workDone}</td>
                   <td>J</td>
                   <td>
-                    <span className="material-icons info-icon" onClick={() => showFormulaDetails("workDone")}>
-                      info
-                    </span>
+                    <i className="fas fa-info-circle info-icon" onClick={() => showFormulaDetails("workDone")}></i>
                   </td>
                 </tr>
                 <tr>
@@ -104,9 +100,7 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
                   <td>{results.timeTaken}</td>
                   <td>Sec</td>
                   <td>
-                    <span className="material-icons info-icon" onClick={() => showFormulaDetails("timeTaken")}>
-                      info
-                    </span>
+                    <i className="fas fa-info-circle info-icon" onClick={() => showFormulaDetails("timeTaken")}></i>
                   </td>
                 </tr>
                 <tr>
@@ -114,9 +108,10 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
                   <td>{results.heatGeneration}</td>
                   <td>W</td>
                   <td>
-                    <span className="material-icons info-icon" onClick={() => showFormulaDetails("heatGeneration")}>
-                      info
-                    </span>
+                    <i
+                      className="fas fa-info-circle info-icon"
+                      onClick={() => showFormulaDetails("heatGeneration")}
+                    ></i>
                   </td>
                 </tr>
                 <tr>
@@ -124,9 +119,7 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
                   <td>{results.massOfOil}</td>
                   <td>kg</td>
                   <td>
-                    <span className="material-icons info-icon" onClick={() => showFormulaDetails("massOfOil")}>
-                      info
-                    </span>
+                    <i className="fas fa-info-circle info-icon" onClick={() => showFormulaDetails("massOfOil")}></i>
                   </td>
                 </tr>
                 <tr>
@@ -134,12 +127,10 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
                   <td>{results.temperatureGeneration}</td>
                   <td>°C</td>
                   <td>
-                    <span
-                      className="material-icons info-icon"
+                    <i
+                      className="fas fa-info-circle info-icon"
                       onClick={() => showFormulaDetails("temperatureGeneration")}
-                    >
-                      info
-                    </span>
+                    ></i>
                   </td>
                 </tr>
                 <tr>
@@ -147,9 +138,10 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
                   <td>{results.temperatureInside}</td>
                   <td>°C</td>
                   <td>
-                    <span className="material-icons info-icon" onClick={() => showFormulaDetails("temperatureInside")}>
-                      info
-                    </span>
+                    <i
+                      className="fas fa-info-circle info-icon"
+                      onClick={() => showFormulaDetails("temperatureInside")}
+                    ></i>
                   </td>
                 </tr>
               </tbody>
@@ -173,9 +165,10 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
                   <td>{results.airFlowVelocity}</td>
                   <td>m/sec</td>
                   <td>
-                    <span className="material-icons info-icon" onClick={() => showFormulaDetails("airFlowVelocity")}>
-                      info
-                    </span>
+                    <i
+                      className="fas fa-info-circle info-icon"
+                      onClick={() => showFormulaDetails("airFlowVelocity")}
+                    ></i>
                   </td>
                 </tr>
                 <tr>
@@ -183,12 +176,10 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
                   <td>{results.convectiveHeatTransfer}</td>
                   <td>W/m²·K</td>
                   <td>
-                    <span
-                      className="material-icons info-icon"
+                    <i
+                      className="fas fa-info-circle info-icon"
                       onClick={() => showFormulaDetails("convectiveHeatTransfer")}
-                    >
-                      info
-                    </span>
+                    ></i>
                   </td>
                 </tr>
                 <tr>
@@ -196,9 +187,7 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
                   <td>{results.qLoss}</td>
                   <td>W</td>
                   <td>
-                    <span className="material-icons info-icon" onClick={() => showFormulaDetails("qLoss")}>
-                      info
-                    </span>
+                    <i className="fas fa-info-circle info-icon" onClick={() => showFormulaDetails("qLoss")}></i>
                   </td>
                 </tr>
                 <tr>
@@ -206,12 +195,10 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
                   <td>{results.temperatureDifference}</td>
                   <td>°C</td>
                   <td>
-                    <span
-                      className="material-icons info-icon"
+                    <i
+                      className="fas fa-info-circle info-icon"
                       onClick={() => showFormulaDetails("temperatureDifference")}
-                    >
-                      info
-                    </span>
+                    ></i>
                   </td>
                 </tr>
                 <tr>
@@ -219,9 +206,10 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
                   <td>{results.finalTemperature}</td>
                   <td>°C</td>
                   <td>
-                    <span className="material-icons info-icon" onClick={() => showFormulaDetails("finalTemperature")}>
-                      info
-                    </span>
+                    <i
+                      className="fas fa-info-circle info-icon"
+                      onClick={() => showFormulaDetails("finalTemperature")}
+                    ></i>
                   </td>
                 </tr>
               </tbody>
@@ -248,7 +236,6 @@ const ResultsPage = ({ results, jobId, timestamp, inputs, onBackToCalculator, on
         </div>
       </div>
 
-      {/* Formula Modal */}
       <Modal
         id="formula-modal"
         title={formulaInfo.title}

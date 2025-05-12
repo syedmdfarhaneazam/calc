@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import Sidebar from "../components/Sidebar"
 import CalculatorForm from "../components/CalculatorForm"
@@ -77,11 +75,11 @@ const DashboardPage = () => {
             style={{ display: activePage === "calculator" && !showResults ? "flex" : "none" }}
           >
             <button id="clear-form-btn" className="btn btn-text">
-              <span className="material-icons">clear_all</span>
+              <i className="fas fa-trash-alt"></i>
               Clear Form
             </button>
             <button id="calculate-btn" className="btn btn-primary" form="calculator-form" type="submit">
-              <span className="material-icons">play_arrow</span>
+              <i className="fas fa-play"></i>
               Calculate
             </button>
           </div>

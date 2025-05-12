@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { useNotification } from "../context/NotificationContext"
 import { useSession } from "../context/SessionContext"
@@ -14,7 +12,6 @@ const CalculatorForm = ({ onCalculationComplete }) => {
   const { showNotification } = useNotification()
   const { jobs, saveJob } = useSession()
 
-  // Initialize form with empty values
   useEffect(() => {
     const initialInputs = {}
     inputFields.forEach((field) => {
@@ -29,8 +26,6 @@ const CalculatorForm = ({ onCalculationComplete }) => {
       ...prev,
       [id]: value,
     }))
-
-    // Clear validation error when user types
     if (validationErrors[id]) {
       setValidationErrors((prev) => ({
         ...prev,
@@ -66,20 +61,15 @@ const CalculatorForm = ({ onCalculationComplete }) => {
       return
     }
 
-    // Convert string inputs to numbers
     const numericInputs = {}
     Object.entries(inputs).forEach(([key, value]) => {
       numericInputs[key] = Number.parseFloat(value)
     })
 
-    // Generate job ID and timestamp
     const jobId = generateJobId()
     const timestamp = formatDate(new Date())
-
-    // Calculate results
     const results = calculate(numericInputs)
 
-    // Create job object
     const job = {
       id: jobId,
       timestamp: timestamp,
@@ -87,13 +77,10 @@ const CalculatorForm = ({ onCalculationComplete }) => {
       results: results,
     }
 
-    // Save job
     saveJob(job)
 
-    // Show notification
     showNotification("Calculation completed successfully!", "success")
 
-    // Pass results to parent component
     onCalculationComplete(results, jobId, timestamp, numericInputs)
   }
 
@@ -151,14 +138,13 @@ const CalculatorForm = ({ onCalculationComplete }) => {
               className="btn btn-secondary"
               onClick={() => setShowJobLoadModal(true)}
             >
-              <span className="material-icons">file_upload</span>
+              <i className="fas fa-upload"></i>
               Load from Job
             </button>
           </div>
         </form>
       </div>
 
-      {/* Job Load Modal */}
       <Modal
         id="job-load-modal"
         title="Load Job"

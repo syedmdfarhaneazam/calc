@@ -1,5 +1,3 @@
-"use client"
-
 import { useTheme } from "../context/ThemeContext"
 
 const ThemeToggle = () => {
@@ -8,7 +6,7 @@ const ThemeToggle = () => {
   return (
     <div className="theme-toggle">
       <button id="theme-toggle-btn" aria-label="Toggle theme" onClick={toggleTheme}>
-        <span className="material-icons">{theme === "light" ? "dark_mode" : "light_mode"}</span>
+        <i className={`fas ${theme === "light" ? "fa-moon" : "fa-sun"}`}></i>
       </button>
     </div>
   )

@@ -1,12 +1,7 @@
 import { round } from "./sessionUtils"
 
-/**
- * Calculate all results based on input values
- * @param {Object} inputs - Object containing all input values
- * @returns {Object} - Object containing all calculation results
- */
+
 export const calculate = (inputs) => {
-  // Calculate results for table 1
   const workDone = (inputs.reboundDamping + inputs.compressionDamping) * inputs.totalStrokeTravel
   const timeTaken = inputs.totalStrokeTravel / inputs.velocity
   const heatGeneration = workDone / timeTaken
@@ -14,16 +9,13 @@ export const calculate = (inputs) => {
   const temperatureGeneration = heatGeneration / (massOfOil * inputs.specificHeatCapacityOfOil)
   const temperatureInside = temperatureGeneration * inputs.totalTime
 
-  // Calculate results for table 2
   const airFlowVelocity = inputs.airFlowRate / inputs.cylinderSurfaceArea
   const convectiveHeatTransfer = 10 + 5 * airFlowVelocity
   const qLoss = convectiveHeatTransfer * inputs.cylinderSurfaceArea * temperatureInside
   const temperatureDifference = (qLoss * 60) / (inputs.massFlowRate * inputs.specificHeatCapacityOfOil)
   const finalTemperature = temperatureInside - temperatureDifference
 
-  // Return all results, rounded to 6 decimal places
   return {
-    // Results table 1
     workDone: round(workDone, 6),
     timeTaken: round(timeTaken, 6),
     heatGeneration: round(heatGeneration, 6),
@@ -31,7 +23,6 @@ export const calculate = (inputs) => {
     temperatureGeneration: round(temperatureGeneration, 6),
     temperatureInside: round(temperatureInside, 6),
 
-    // Results table 2
     airFlowVelocity: round(airFlowVelocity, 6),
     convectiveHeatTransfer: round(convectiveHeatTransfer, 6),
     qLoss: round(qLoss, 6),
@@ -40,7 +31,6 @@ export const calculate = (inputs) => {
   }
 }
 
-// Input field definitions
 export const inputFields = [
   {
     id: "airFlowRate",

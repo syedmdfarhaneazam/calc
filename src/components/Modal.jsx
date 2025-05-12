@@ -1,5 +1,3 @@
-"use client"
-
 import { useEffect, useRef } from "react"
 
 const Modal = ({ id, title, isActive, onClose, children }) => {

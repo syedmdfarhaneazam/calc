@@ -10,20 +10,17 @@ export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("light")
 
   useEffect(() => {
-    // Get stored theme or use system preference
     const storedTheme = localStorage.getItem("theme")
 
     if (storedTheme) {
       setTheme(storedTheme)
     } else {
-      // Check system preference
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
       setTheme(prefersDark ? "dark" : "light")
     }
   }, [])
 
   useEffect(() => {
-    // Apply theme class to body
     if (theme === "dark") {
       document.body.classList.add("dark-theme")
       document.body.classList.remove("light-theme")
@@ -32,7 +29,6 @@ export const ThemeProvider = ({ children }) => {
       document.body.classList.remove("dark-theme")
     }
 
-    // Store theme preference
     localStorage.setItem("theme", theme)
   }, [theme])
 

@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { useSession } from "../context/SessionContext"
 import { useNotification } from "../context/NotificationContext"
@@ -89,10 +87,10 @@ const JobsPage = ({ onViewJob, onLoadJob }) => {
                   <td>{job.results.finalTemperature.toFixed(2)} °C</td>
                   <td>
                     <button className="action-btn" title="View Results" onClick={() => handleViewJob(job.id)}>
-                      <span className="material-icons">visibility</span>
+                      <i className="fas fa-eye"></i>
                     </button>
                     <button className="action-btn" title="Load Inputs" onClick={() => handleLoadJob(job.id)}>
-                      <span className="material-icons">edit</span>
+                      <i className="fas fa-edit"></i>
                     </button>
                   </td>
                 </tr>

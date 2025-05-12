@@ -5,6 +5,7 @@ import { useSession } from "./context/SessionContext"
 import "./styles/auth.css"
 import "./styles/dashboard.css"
 import "./styles/styles.css"
+import "@fortawesome/fontawesome-free/css/all.min.css"
 
 function App() {
   const { isLoggedIn } = useSession()
