@@ -23,6 +23,7 @@
 
 .sidebar.collapsed {
   width: 64px;
+  overflow-x: hidden;
 }
 
 .sidebar-header {
@@ -54,6 +55,7 @@
   font-weight: 500;
   white-space: nowrap;
   transition: opacity var(--transition-normal);
+  overflow-x: hidden;
 }
 
 .sidebar.collapsed .logo-text {
@@ -112,6 +114,7 @@
 .nav-text {
   white-space: nowrap;
   transition: opacity var(--transition-normal);
+  overflow-x: hidden;
 }
 
 .sidebar.collapsed .nav-text {
