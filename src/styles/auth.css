@@ -1,6 +1,8 @@
-.auth-container {
+.front-look {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
     padding: var(--spacing-4);
@@ -9,6 +11,38 @@
         var(--primary-700),
         var(--secondary-700)
     );
+}
+
+.logo-noCnx {
+    align-self: flex-start;
+    display: flex;
+    align-content: center;
+    padding: var(--spacing-6);
+    margin-bottom: var(--spacing-4);
+    width: 30%;
+    background-color: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 25px var(--shadow);
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+.logo-noCnx img {
+    width: 400px;
+    height: auto;
+}
+.logo-noCnx p {
+    font-size: 0.6em;
+    font-weight: 1000;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-4);
+    background: transparent;
+    flex-grow: 1;
 }
 
 .auth-card {
@@ -42,9 +76,8 @@
 }
 
 .login-logo img {
-    width: 100%;
+    width: 80%;
     height: auto;
-    border-radius: var(--radius-full);
     object-fit: cover;
 }
 
@@ -138,4 +171,3 @@
         font-size: var(--font-size-lg);
     }
 }
-

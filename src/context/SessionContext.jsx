@@ -11,24 +11,19 @@ export const SessionProvider = ({ children }) => {
   const [jobs, setJobs] = useState([])
 
   useEffect(() => {
-    // Initialize session
+
     initSession()
 
-    // Load current user from session storage
     const user = getSessionData("currentUser")
     if (user) {
       setCurrentUser(user)
       setIsLoggedIn(true)
     }
-
-    // Load jobs
     loadJobs()
   }, [])
 
   const initSession = () => {
-    // Initialize users array in session storage if it doesn't exist
     if (!getUsers().length) {
-      // Add a default user for testing
       const defaultUsers = [
         {
           name: "Test User",
@@ -38,8 +33,6 @@ export const SessionProvider = ({ children }) => {
       ]
       setSessionData("users", defaultUsers)
     }
-
-    // Initialize jobs array in session storage if it doesn't exist
     if (!getJobs().length) {
       setSessionData("jobs", [])
     }
